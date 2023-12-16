@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "gulp img"
+    "dev": "gulp development",
+    "production": "gulp production"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,8 @@
   },
   "dependencies": {
     "browser-sync": "^2.29.3",
+    "clean": "^4.0.2",
+    "del": "^7.1.0",
     "gulp-autoprefixer": "^9.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-html-bem-validator": "^1.0.5",

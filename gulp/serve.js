@@ -1,16 +1,19 @@
 import gulp from 'gulp'
-import { pug2html } from './pug2html'
-import { scss2css } from './scss2css'
-import { ts2js } from './ts2js'
-import { minifyImages } from './minifyImages'
-const server = require('browser-sync').create()
+import browserSync from 'browser-sync'
+
+import { pug2html } from './pug2html.js'
+import { scss2css } from './scss2css.js'
+import { ts2js } from './ts2js.js'
+import { minifyImages } from './minifyImages.js'
+
+const server = browserSync.create()
 
 function readyReload(cb) {
     server.reload()
     cb()
 }
 
-module.exports = function serve(cb) {
+export function serve(cb) {
     server.init({
         server: 'build',
         notify: false,
