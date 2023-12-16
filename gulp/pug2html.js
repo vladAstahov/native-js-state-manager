@@ -4,7 +4,7 @@ import pug from 'gulp-pug'
 import htmlBemValidator from "gulp-html-bem-validator"
 
 export function pug2html(cb) {
-    return gulp.src('./src/app/index.pug')
+    return gulp.src('./src/app/*.pug')
         .pipe(plumber())
         .pipe(pug())
         .pipe(htmlBemValidator())
