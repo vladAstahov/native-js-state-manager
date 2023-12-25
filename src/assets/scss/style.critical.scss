@@ -1,0 +1,21 @@
+// Переменные, миксины, функции
+@import "helpers/reset";
+@import "helpers/functions";
+@import "helpers/spaces";
+@import "helpers/breakpoints";
+@import "helpers/typography";
+@import "helpers/mixins";
+@import "helpers/other";
+@import "helpers/variables";
+
+// Основное
+@import "base/fonts";
+@import "base/common";
+@import "base/animation";
+
+// UI компоненты
+@import "../../components/components.critical";
+
+// секции
+@import "../../sections/sections.critical";
+

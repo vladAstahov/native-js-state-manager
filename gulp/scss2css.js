@@ -1,21 +1,25 @@
-import gulp from 'gulp'
-import plumber from "gulp-plumber"
-import gulpSass from 'gulp-sass'
-import dartSass from 'sass'
-import cleanCSS from 'gulp-clean-css'
-import sourceMaps from 'gulp-sourcemaps'
-import shorthand from 'gulp-shorthand'
-import rename from 'gulp-rename'
-import autoprefixer from 'gulp-autoprefixer';
-import sourcemaps from 'gulp-sourcemaps'
+import gulp from "gulp";
+import sourcemaps from "gulp-sourcemaps";
+import gulpSass from "gulp-sass";
+import * as sass from "sass";
+import autoprefixer from "gulp-autoprefixer";
+import shorthand from "gulp-shorthand";
+import cleanCSS from "gulp-clean-css";
 
-const sass = gulpSass(dartSass)
+export function scss2css(isDev, sync) {
+    if (isDev) {
+        return gulp
+            .src('src/assets/scss/style.scss')
+            .pipe(sourcemaps.init()) // Инициализация source map в dev-режиме
+            .pipe(gulpSass(sass).sync())
+            .pipe(sourcemaps.write()) // Запись source map в dev-режиме
+            .pipe(gulp.dest('dist/css'))
+            .pipe(sync.stream()) // Обновление стилей без перезагрузки страницы
+    }
 
-export function scss2css(cb) {
-    return gulp.src('src/app/assets/styles/*.scss')
-        .pipe(plumber())
-        .pipe(sourceMaps.init())
-        .pipe(sass.sync())
+    return gulp
+        .src(['src/assets/scss/style.main.scss', 'src/assets/scss/style.critical.scss'])
+        .pipe(gulpSass(sass).sync())
         .pipe(autoprefixer())
         .pipe(shorthand())
         .pipe(cleanCSS({
@@ -24,7 +28,5 @@ export function scss2css(cb) {
         }, details => {
             console.log(`${details.name}: Original size:${details.stats.originalSize} - Minified size: ${details.stats.minifiedSize}`)
         }))
-        .pipe(sourcemaps.write())
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('build/css'))
+        .pipe(gulp.dest('dist/css'))
 }

@@ -1,6 +1,0 @@
-let a = '';
-window.onload = () => {
-  a = '100';
-  console.log(a);
-};
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNyaXRpY2FsLnRzIl0sIm5hbWVzIjpbImEiLCJ3aW5kb3ciLCJvbmxvYWQiLCJjb25zb2xlIiwibG9nIl0sIm1hcHBpbmdzIjoiQUFBQSxJQUFJQSxDQUFDLEdBQVcsRUFBRTtBQUVsQkMsTUFBTSxDQUFDQyxNQUFNLEdBQUcsTUFBSztFQUNqQkYsQ0FBQyxHQUFHLEtBQUs7RUFDVEcsT0FBTyxDQUFDQyxHQUFHLENBQUNKLENBQUMsQ0FBQztBQUNsQixDQUFDIiwiZmlsZSI6ImNyaXRpY2FsLmpzIiwic291cmNlc0NvbnRlbnQiOlsibGV0IGE6IHN0cmluZyA9ICcnXG5cbndpbmRvdy5vbmxvYWQgPSAoKSA9PiB7XG4gICAgYSA9ICcxMDAnXG4gICAgY29uc29sZS5sb2coYSlcbn0iXX0=

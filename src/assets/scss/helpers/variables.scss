@@ -1,0 +1,27 @@
+/* BASE */
+$base: hsla(0, 0%, 9%, 1);
+$secondary: hsla(210, 13%, 64%, 1);
+$brand: hsla(185, 70%, 45%, 1);
+
+/* BACKGROUND */
+$backgroundBase: $base;
+$backgroundSurface: #{hsla-new($base, (l: lightness($base) + 5))};
+$backgroundBaseSecondary: #{hsla-new($base, (l: lightness($base) + 100))};
+$backgroundSurfaceSecondary: #{hsla-new($base, (l: lightness($base) + 87))};
+$backgroundBrand: $brand;
+
+
+/* TEXT */
+$textBase: $base;
+$textSurface: #{hsla-new($base, (l: lightness($base) + 100))};
+$textSecondary: $secondary;
+
+/* BORDER */
+$borderBase: #{hsla-new($secondary, (a: 0.2))};
+
+/* INTERACTIVE */
+$interactiveBackgroundSurface: #{hsla-new($base, (l: lightness($base) + 100, a: 0.2))};
+$interactiveBackgroundSurfaceHover: #{hsla-new($base, (l: lightness($base) + 100, a: 0.35))};
+$interactiveTextSurface: #{hsla-new($base, (l: lightness($base) + 100))};
+
+

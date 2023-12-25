@@ -1,0 +1,6 @@
+$fontFamily: 'Onest';
+
+@include newFont('Onest', 'Onest-ExtraBold', 800);
+@include newFont('Onest', 'Onest-Bold', 700);
+@include newFont('Onest', 'Onest-Regular', 400);
+

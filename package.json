@@ -1,54 +1,59 @@
 {
-  "name": "native-js-template",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "dev": "gulp development",
-    "production": "gulp production"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vladAstahov/native-js-template.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/vladAstahov/native-js-template/issues"
-  },
-  "homepage": "https://github.com/vladAstahov/native-js-template#readme",
-  "devDependencies": {
-    "@babel/core": "^7.23.6",
-    "@babel/preset-env": "^7.23.6",
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
-    "gulp-sass": "^5.1.0",
-    "node-sass": "^9.0.0",
-    "sass": "^1.69.5"
-  },
-  "dependencies": {
-    "browser-sync": "^2.29.3",
-    "clean": "^4.0.2",
-    "del": "^7.1.0",
-    "express": "^4.18.2",
-    "gulp-autoprefixer": "^9.0.0",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-html-bem-validator": "^1.0.5",
-    "gulp-imagemin": "^9.0.0",
-    "gulp-plumber": "^1.2.1",
-    "gulp-pug": "^5.0.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-shorthand": "^1.1.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "gulp-stylelint": "^13.0.0",
-    "gulp-typescript": "^6.0.0-alpha.1",
-    "gulp-w3c-html-validator": "^5.3.0",
-    "prerender": "^5.20.2",
-    "stylelint": "^16.0.2",
-    "stylelint-config-standard-scss": "^12.0.0",
-    "stylelint-scss": "^6.0.0",
-    "typescript": "^5.3.3"
-  }
+    "name": "my-gulp-project",
+    "version": "1.0.0",
+    "description": "A simple Gulp project with Pug, SCSS, and JavaScript",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "cross-env NODE_ENV=dev gulp dev",
+        "prod": "cross-env NODE_ENV=production gulp prod"
+    },
+    "type": "module",
+    "keywords": [
+        "gulp",
+        "pug",
+        "scss",
+        "javascript"
+    ],
+    "author": "Your Name",
+    "license": "MIT",
+    "devDependencies": {
+        "@babel/core": "^7.16.7",
+        "@babel/preset-env": "^7.16.7",
+        "babel": "^6.23.0",
+        "browser-sync": "^2.29.3",
+        "critical": "^2.0.6",
+        "cross-env": "^7.0.3",
+        "express": "^4.17.1",
+        "gulp": "^4.0.2",
+        "gulp-babel": "^8.0.0",
+        "gulp-if": "^3.0.0",
+        "gulp-inline-source": "^4.0.0",
+        "gulp-pug": "^5.0.0",
+        "gulp-pugbem": "^2.2.4",
+        "gulp-rename": "^2.0.0",
+        "gulp-replace-task": "^2.0.1",
+        "gulp-sass": "^5.0.0",
+        "gulp-sourcemaps": "^3.0.0",
+        "gulp-uglify": "^3.0.2",
+        "path": "^0.12.7"
+    },
+    "dependencies": {
+        "chokidar": "^3.5.3",
+        "express-compression": "^1.0.2",
+        "fs": "^0.0.1-security",
+        "gulp-autoprefixer": "^9.0.0",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-imagemin": "^9.0.0",
+        "gulp-shorthand": "^1.1.0",
+        "gulp-svg-sprite": "^2.0.3",
+        "gulp-svgmin": "^4.1.0",
+        "imagemin": "^8.0.1",
+        "imagemin-mozjpeg": "^10.0.0",
+        "imagemin-pngquant": "^9.0.2",
+        "ncp": "^2.0.0",
+        "sass": "^1.69.5",
+        "sharp": "^0.32.6"
+    }
 }

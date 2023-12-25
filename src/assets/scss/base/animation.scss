@@ -1,0 +1,73 @@
+@include media-hover-device {
+    .scroll-animated-top,
+    .scroll-animated-bottom {
+        transition: 0.5s ease;
+        transition-property: opacity, transform;
+
+        opacity: 0;
+    }
+
+    .scroll-animated-top {
+        transform: translateY(#{toRem(100)});
+    }
+
+    .scroll-animated-bottom {
+        transform: translateY(#{toRem(180)});
+    }
+
+    .is-visible .scroll-animated-top,
+    .is-visible .scroll-animated-bottom {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .main-appear-blue,
+    .main-appear-white,
+    .main-appear-phone,
+    .main-appear-logo {
+        transition: 0.6s ease;
+        transition-property: opacity, transform;
+
+        opacity: 0;
+    }
+
+    .main-appear-blue {
+        transition-delay: 0.6s;
+    }
+
+    .main-appear-white {
+        transition-delay: 0.3s;
+    }
+
+    .main-appear-blue {
+        transform: scale(0.1);
+    }
+
+    .main-appear-white {
+        transform: scale(0.1);
+    }
+
+    .main-appear-phone {
+        transform: translateY(#{toRem(100)});
+    }
+
+    .main-appear-logo {
+        transform: translateY(#{toRem(180)});
+    }
+
+    .is-visible .main-appear-blue {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .is-visible .main-appear-white {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .is-visible .main-appear-logo,
+    .is-visible .main-appear-phone {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

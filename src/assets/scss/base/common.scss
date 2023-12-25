@@ -1,0 +1,148 @@
+html {
+    font-size: 12px;
+    scroll-behavior: smooth;
+    @media (min-width: 400px) {
+        font-size: 13.2px;
+    }
+
+    @include media-tablet {
+        font-size: 12px;
+    }
+
+    @include media-desktop {
+        font-size: 12px;
+    }
+
+    @media (min-width: $maxRems) {
+        font-size: 14.4px;
+    }
+}
+
+body {
+    position: relative;
+    font-size: toRem(14);
+    -webkit-font-smoothing: antialiased;
+    color: $textSurface;
+    font-family: $fontFamily, -apple-system, system-ui, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+    background-color: $backgroundBase; //-webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+img {
+    height: auto;
+    width: auto;
+}
+
+.container {
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 100%;
+    max-width: toRem(1200);
+    @media (min-width: 360px) {
+        padding-left: 5.3%;
+        padding-right: 5.3%;
+    }
+    @media (min-width: 414px) {
+        padding-left: 4.58%;
+        padding-right: 4.58%;
+    }
+    @media (min-width: 650px) {
+        padding-left: 6.15%;
+        padding-right: 6.15%;
+    }
+    @media (min-width: 768px) {
+        padding-right: 2.6%;
+        padding-left: 2.6%;
+    }
+    @media (min-width: 1200px) {
+        padding-right: toRem(32);
+        padding-left: toRem(32);
+    }
+}
+
+
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.button,
+button {
+    border: none;
+    cursor: pointer;
+    font-family: $fontFamily, -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica', 'Arial', 'sans-serif';
+    background: none;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    text-align: center;
+}
+
+*:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+[data-src] {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+.lazyload {
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+.lazyloaded {
+    opacity: 1;
+}
+
+.hidden{
+    display: none!important;
+}
+
+.hidden-mobile {
+    @include media-maxMobile{
+        display: none!important;
+    }
+}
+
+.hidden-mobile-late {
+    @include media-maxMobileLate{
+        display: none!important;
+    }
+}
+
+.hidden-tablet {
+    @include media-maxTablet{
+        display: none!important;
+    }
+}
+
+.hidden-desktop {
+    @include media-desktop{
+        display: none!important;
+    }
+}
+
+.show-mobile {
+    display: none!important;
+    @include media-maxMobile {
+        display: block!important;
+    }
+}

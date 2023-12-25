@@ -1,0 +1,34 @@
+@use 'sass:math';
+
+@function toRem($size) {
+    @return math.div($size, 12) * 1rem;
+}
+
+@function freezeRem($size) {
+    $newSize: $size * 1.2 * 1px;
+
+    @return $newSize;
+}
+
+@function hsla-str($color) {
+    @return unquote('hsla(#{hue($color)/1deg}, #{saturation($color)}, #{lightness($color)}, #{alpha($color)})');
+}
+
+@function hsla-new($color, $options) {
+    $newL: lightness($color);
+    $newA: alpha($color);
+
+    @if (map-get($options, 'l')) {
+        $newL: map-get($options, 'l');
+    }
+
+    @if (map-get($options, 'a')) {
+        $newA: map-get($options, 'a');
+    }
+
+    @return hsla(calc(hue($color) / 1), saturation($color), $newL, $newA);
+}
+
+
+
+

@@ -1,12 +1,15 @@
-import gulp from 'gulp'
-import plumber from "gulp-plumber"
-import pug from 'gulp-pug'
-import htmlBemValidator from "gulp-html-bem-validator"
+import gulp from "gulp";
+import pug from "gulp-pug";
+import pugBem from "gulp-pugbem";
+import rename from "gulp-rename";
 
-export function pug2html(cb) {
-    return gulp.src('./src/app/*.pug')
-        .pipe(plumber())
-        .pipe(pug())
-        .pipe(htmlBemValidator())
-        .pipe(gulp.dest('build'))
+export function pug2html(sync) {
+    return gulp
+        .src('src/*.page.pug')
+        .pipe(pug({
+            plugins: [pugBem]
+        }))
+        .pipe(rename({ extname: '.html', basename: 'index' }))
+        .pipe(gulp.dest('dist'))
+        .pipe(sync.stream()) // Обновление HTML без перезагрузки страницы
 }

@@ -1,7 +1,6 @@
-import { deleteAsync } from 'del'
+import fs from "fs";
 
-export function clean(cb) {
-    return deleteAsync('build').then(() => {
-        cb()
-    })
+export function clean(done) {
+    fs.rmSync('./dist', { recursive: true, force: true })
+    done()
 }
