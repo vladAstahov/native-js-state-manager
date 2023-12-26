@@ -27,14 +27,3 @@ export function minifyJs(isDev, sync) {
         .pipe(gulp.dest('dist/js'))
         .pipe(sync.stream()) // Обновление JavaScript без перезагрузки страницы
 }
-
-export function criticalJs() {
-    return gulp
-        .src([
-            'src/assets/js/initial.critical.js',
-        ])
-        .pipe(concat('critical.js'))
-        .pipe(babel())
-        .pipe(uglify()) // Минификация в prod-режиме
-        .pipe(gulp.dest('dist/js'))
-}

@@ -1,14 +1,15 @@
 import gulp from 'gulp'
 import browserSync from 'browser-sync'
-import {scss2css} from "./gulp/scss2css.js";
-import {pug2html} from "./gulp/pug2html.js";
-import {optimizeImages} from "./gulp/optimizeImages.js";
-import {minifyJs} from "./gulp/minifyJs.js";
-import {cssInHtml} from "./gulp/cssInHtml.js";
-import {sprites} from "./gulp/sprites.js";
-import {fonts} from "./gulp/fonts.js";
-import {clean} from "./gulp/clean.js";
-import {public2dist} from "./gulp/public2dist.js";
+import { scss2css } from "./gulp/scss2css.js";
+import { pug2html } from "./gulp/pug2html.js";
+import { optimizeImages } from "./gulp/optimizeImages.js";
+import { minifyJs } from "./gulp/minifyJs.js";
+import { cssInHtml } from "./gulp/cssInHtml.js";
+import { sprites } from "./gulp/sprites.js";
+import { fonts } from "./gulp/fonts.js";
+import { clean } from "./gulp/clean.js";
+import { public2dist } from "./gulp/public2dist.js";
+import { generateFavicon } from './gulp/generateFavicon.js'
 
 const isDev = process.env.NODE_ENV === 'dev' // Проверяем текущий режим сборки
 const sync = browserSync.create()
@@ -39,4 +40,6 @@ gulp.task(
 )
 
 gulp.task('dev', gulp.series('default', 'watch'))
-gulp.task('prod', gulp.series(clean, 'default', public2dist))
+gulp.task('prod', gulp.series(clean, 'default', public2dist, generateFavicon))
+gulp.task('images', gulp.series(optimizeImages))
+gulp.task('favicon', gulp.series(generateFavicon))
