@@ -1,0 +1,11 @@
+.image {
+    display: flex;
+    width: 100%;
+
+    &__main {
+        max-width: 100%;
+        max-height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}

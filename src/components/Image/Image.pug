@@ -1,0 +1,52 @@
+mixin Image(imagePath, alt, exc)
+    picture.image&attributes(attributes)
+        source(
+            type="image/webp"
+            media="(min-width: 1200px)"
+            srcset=`${imagePath}-desktop.webp`
+            width='100px'
+            height='100px'
+        )
+
+        source(
+            type="image/webp"
+            media="(min-width: 769px)"
+            srcset=`${imagePath}-tablet.webp`
+            width='100px'
+            height='100px'
+        )
+        source(
+            type="image/webp"
+            media="(max-width: 769px)"
+            srcset=`${imagePath}-mobile.webp`
+            width='100px'
+            height='100px'
+        )
+        source(
+            type="image/png"
+            media="(min-width: 1200px)"
+            srcset=`${imagePath}-desktop.${exc || 'png'}`
+            width='100px'
+            height='100px'
+        )
+        source(
+            type="image/png"
+            media="(min-width: 769px)"
+            srcset=`${imagePath}-tablet.${exc || 'png'}`
+            width='100px'
+            height='100px'
+        )
+        source(
+            type="image/png"
+            media="(max-width: 769px)"
+            srcset=`${imagePath}-mobile.${exc || 'png'}`
+            width='100px'
+            height='100px'
+        )
+        img.__main(
+            srcset=`${imagePath}-mobile.webp 769w, ${imagePath}-tablet.webp 1200w, ${imagePath}-desktop.webp`
+            alt=alt
+            loading="lazy"
+            width='100px'
+            height='100px'
+        )

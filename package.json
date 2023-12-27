@@ -8,8 +8,7 @@
         "dev": "cross-env NODE_ENV=dev gulp dev",
         "prod": "cross-env NODE_ENV=production gulp prod",
         "image": "gulp images",
-        "favicon": "gulp favicon",
-        "test": "gulp js"
+        "favicon": "gulp favicon"
     },
     "type": "module",
     "keywords": [
