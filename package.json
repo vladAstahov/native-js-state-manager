@@ -8,7 +8,8 @@
         "dev": "cross-env NODE_ENV=dev gulp dev",
         "prod": "cross-env NODE_ENV=production gulp prod",
         "image": "gulp images",
-        "favicon": "gulp favicon"
+        "favicon": "gulp favicon",
+        "test": "gulp js"
     },
     "type": "module",
     "keywords": [
@@ -38,7 +39,8 @@
         "gulp-sass": "^5.0.0",
         "gulp-sourcemaps": "^3.0.0",
         "gulp-uglify": "^3.0.2",
-        "path": "^0.12.7"
+        "path": "^0.12.7",
+        "webpack-stream": "^7.0.0"
     },
     "dependencies": {
         "chokidar": "^3.5.3",

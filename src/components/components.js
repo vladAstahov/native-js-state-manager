@@ -1,0 +1,1 @@
+// use import "./[ComponentName]/[ComponentName].js"

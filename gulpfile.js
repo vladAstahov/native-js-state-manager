@@ -10,6 +10,7 @@ import { fonts } from "./gulp/fonts.js";
 import { clean } from "./gulp/clean.js";
 import { public2dist } from "./gulp/public2dist.js";
 import { generateFavicon } from './gulp/generateFavicon.js'
+import gulpIf from "gulp-if";
 
 const isDev = process.env.NODE_ENV === 'dev' // Проверяем текущий режим сборки
 const sync = browserSync.create()
@@ -43,3 +44,4 @@ gulp.task('dev', gulp.series('default', 'watch'))
 gulp.task('prod', gulp.series(clean, 'default', public2dist, generateFavicon))
 gulp.task('images', gulp.series(optimizeImages))
 gulp.task('favicon', gulp.series(generateFavicon))
+gulp.task('js', gulp.series(jsTask))
